@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selamat Hari Guru Nasional 2026 • SMA Negeri 1 Kabangka</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Playfair Display, Lora, & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              950: '#08182E',
+              900: '#0F294A',
+              800: '#163A66',
+              700: '#1E4E89',
+            },
+            amber: {
+              50: '#FFFBEB',
+              100: '#FEF3C7',
+              400: '#FBBF24',
+              500: '#F59E0B',
+              600: '#D97706',
+              700: '#B45309',
+            },
+            cream: {
+              50: '#FDFBF7',
+              100: '#FAF8F5',
+              200: '#F3EFE6',
+            },
+            sage: {
+              100: '#E6F2EF',
+              500: '#2A7B6F',
+              600: '#1F6359',
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            poem: ['"Lora"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Organic Animations & Glassmorphism */
+    body {
+      background-color: #FAF8F5;
+      color: #0F294A;
+      overflow-x: hidden;
+    }
+
+    /* Welcome Curtain Animation */
+    #welcome-curtain {
+      transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1), opacity 1s ease;
+    }
+    #welcome-curtain.opened {
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Floating Background Elements */
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-18px) rotate(4deg); }
+    }
+    @keyframes floatReverse {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(15px) rotate(-4deg); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.45; transform: scale(1); }
+      50% { opacity: 0.85; transform: scale(1.08); }
+    }
+    @keyframes equalizer {
+      0%, 100% { height: 6px; }
+      50% { height: 18px; }
+    }
+
+    .animate-float-slow {
+      animation: floatSlow 7s ease-in-out infinite;
+    }
+    .animate-float-reverse {
+      animation: floatReverse 8.5s ease-in-out infinite;
+    }
+    .animate-pulse-glow {
+      animation: pulseGlow 5s ease-in-out infinite;
+    }
+
+    /* Music Equalizer Bars */
+    .eq-bar {
+      width: 3px;
+      border-radius: 999px;
+      background-color: #F59E0B;
+      transition: height 0.2s ease;
+    }
+    .playing .eq-bar:nth-child(1) { animation: equalizer 0.8s ease-in-out infinite; }
+    .playing .eq-bar:nth-child(2) { animation: equalizer 0.6s ease-in-out 0.2s infinite; }
+    .playing .eq-bar:nth-child(3) { animation: equalizer 0.9s ease-in-out 0.1s infinite; }
+    .playing .eq-bar:nth-child(4) { animation: equalizer 0.7s ease-in-out 0.3s infinite; }
+
+    /* Page / Section Transition System */
+    .page-section {
+      transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .page-hidden {
+      display: none;
+      opacity: 0;
+      transform: translateY(24px) scale(0.98);
+    }
+    .page-active {
+      display: block;
+      animation: pageEnter 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    @keyframes pageEnter {
+      0% {
+        opacity: 0;
+        transform: translateY(28px) scale(0.985);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Staggered Reveal Items */
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal-item.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Organic Glass Cards */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(217, 119, 6, 0.16);
+      box-shadow: 0 18px 45px -15px rgba(15, 41, 74, 0.08);
+    }
+    .glass-navy {
+      background: linear-gradient(145deg, rgba(15, 41, 74, 0.96), rgba(22, 58, 102, 0.94));
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(251, 191, 36, 0.25);
+    }
+
+    /* Soft Organic Blob Shape */
+    .organic-blob {
+      border-radius: 60% 40% 55% 45% / 45% 55% 45% 55%;
+    }
+
+    /* Gallery Hover Zoom */
+    .gallery-card img {
+      transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .gallery-card:hover img {
+      transform: scale(1.06);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAF8F5;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #D97706;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-amber-200 selection:text-navy-900 relative min-h-screen">
+
+  <!-- Ambient Floating Canvas (Petals & Golden Bokeh) -->
+  <canvas id="ambient-canvas" class="fixed inset-0 pointer-events-none z-40"></canvas>
+
+  <!-- ===================================================================== -->
+  <!-- 1. LAYAR PEMBUKA (WELCOME CURTAIN / AMPLOP KEHORMATAN INTERAKTIF)       -->
+  <!-- ===================================================================== -->
+  <div id="welcome-curtain" class="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-navy-950 via-navy-900 to-[#123842] text-cream-100 p-4 sm:p-8 overflow-hidden">
+    
+    <!-- Decorative Soft Orbs & School Silhouettes -->
+    <div class="absolute -top-24 -left-24 w-80 h-80 bg-amber-500/15 rounded-full blur-3xl animate-pulse-glow"></div>
+    <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-sage-500/20 rounded-full blur-3xl animate-pulse-glow"></div>
+    
+    <!-- Floating Academic Icons -->
+    <div class="absolute top-14 left-10 text-amber-400/20 text-4xl sm:text-5xl animate-float-slow hidden sm:block">
+      <i class="fa-solid fa-book-open"></i>
+    </div>
+    <div class="absolute bottom-20 left-16 text-amber-400/15 text-3xl sm:text-4xl animate-float-reverse hidden sm:block">
+      <i class="fa-solid fa-feather-pointed"></i>
+    </div>
+    <div class="absolute top-20 right-16 text-sage-500/25 text-4xl sm:text-5xl animate-float-reverse hidden sm:block">
+      <i class="fa-solid fa-graduation-cap"></i>
+    </div>
+    <div class="absolute bottom-16 right-14 text-amber-400/20 text-3xl sm:text-4xl animate-float-slow hidden sm:block">
+      <i class="fa-solid fa-award"></i>
+    </div>
+
+    <!-- Main Curtain Card -->
+    <div class="relative max-w-2xl w-full bg-white/10 backdrop-blur-xl border border-amber-400/30 rounded-[2.25rem] p-7 sm:p-12 text-center shadow-2xl">
+      <!-- Top Emblem Badge -->
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs sm:text-sm font-medium tracking-wider uppercase mb-6">
+        <i class="fa-solid fa-sparkles text-amber-400"></i>
+        <span>25 November 2026</span>
+      </div>
+
+      <!-- School Crest / Icon -->
+      <div class="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-tr from-amber-600 to-amber-400 p-0.5 shadow-lg shadow-amber-500/25 animate-float-slow">
+        <div class="w-full h-full bg-navy-900 rounded-[1.4rem] flex items-center justify-center text-amber-400 text-3xl">
+          <i class="fa-solid fa-chalkboard-user"></i>
+        </div>
+      </div>
+
+      <h1 class="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight mb-3">
+        Selamat Hari Guru <span class="text-amber-400 italic">Nasional</span>
+      </h1>
+      
+      <p class="font-serif text-lg sm:text-xl text-amber-200/95 font-medium mb-4">
+        Untuk Bapak &amp; Ibu Guru Hebat<br class="sm:hidden" /> SMA Negeri 1 Kabangka
+      </p>
+
+      <p class="text-slate-300 text-sm sm:text-base max-w-lg mx-auto leading-relaxed mb-8">
+        Sebuah persembahan hangat berisi untaian doa terbaik, bait puisi penuh makna, dan kenangan indah kebersamaan para pelita ilmu.
+      </p>
+
+      <!-- Open Curtain & Play Music Button -->
+      <button id="open-curtain-btn" class="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 text-navy-950 font-bold text-base sm:text-lg shadow-xl shadow-amber-500/30 hover:shadow-amber-400/50 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 cursor-pointer">
+        <span class="w-8 h-8 rounded-full bg-navy-950/15 flex items-center justify-center group-hover:rotate-12 transition-transform">
+          <i class="fa-solid fa-envelope-open-text"></i>
+        </span>
+        <span>Buka Ucapan &amp; Putar Musik</span>
+        <i class="fa-solid fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
+      </button>
+
+      <p class="mt-5 text-xs text-slate-400 flex items-center justify-center gap-2">
+        <i class="fa-solid fa-volume-high text-amber-400"></i>
+        <span>Dilengkapi alunan musik instrumental lembut</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- 2. FLOATING HEADER & MUSIC CONTROLLER                                 -->
+  <!-- ===================================================================== -->
+  <header class="sticky top-0 z-30 pt-3 px-4 sm:px-6 pointer-events-none">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-3">
+      <!-- School Brand Pill -->
+      <div class="pointer-events-auto glass-card px-4 py-2.5 rounded-full flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full bg-navy-900 text-amber-400 flex items-center justify-center text-sm shadow-sm">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="leading-tight">
+          <p class="text-xs font-bold text-navy-900 tracking-tight">SMAN 1 KABANGKA</p>
+          <p class="text-[11px] text-amber-700 font-medium">Hari Guru • 25 Nov 2026</p>
+        </div>
+      </div>
+
+      <!-- Right Action Pills: Send Flowers + Music Control -->
+      <div class="pointer-events-auto flex items-center gap-2.5">
+        <button id="send-appreciation-btn" class="glass-card hover:bg-amber-50 text-navy-900 px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-2 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer border-amber-400/40">
+          <i class="fa-solid fa-seedling text-amber-600"></i>
+          <span class="hidden sm:inline">Kirim Bunga &amp; Apresiasi</span>
+          <span class="sm:hidden">Apresiasi</span>
+        </button>
+
+        <button id="music-toggle-btn" aria-label="Putar atau Jeda Musik" class="glass-navy text-white px-4 py-2.5 rounded-full flex items-center gap-2.5 shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer">
+          <div id="music-eq" class="flex items-end gap-0.5 h-4">
+            <span class="eq-bar h-2"></span>
+            <span class="eq-bar h-3"></span>
+            <span class="eq-bar h-1.5"></span>
+            <span class="eq-bar h-2.5"></span>
+          </div>
+          <span id="music-status-text" class="text-xs font-medium text-amber-300">Musik Off</span>
+          <i id="music-icon" class="fa-solid fa-play text-xs text-amber-400"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Toast Notification for Appreciation Message -->
+  <div id="appreciation-toast" class="fixed top-20 left-1/2 -translate-x-1/2 z-40 pointer-events-none opacity-0 -translate-y-4 transition-all duration-500 w-[92%] max-w-md">
+    <div class="glass-navy text-white px-5 py-3.5 rounded-2xl shadow-2xl border border-amber-400/40 flex items-center gap-3.5">
+      <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 text-lg">
+        <i class="fa-solid fa-heart"></i>
+      </div>
+      <div>
+        <p class="text-[11px] uppercase tracking-wider text-amber-300 font-semibold">Apresiasi Terkirim</p>
+        <p id="toast-message" class="text-xs sm:text-sm text-cream-100 leading-snug mt-0.5">Terima kasih Bapak &amp; Ibu Guru atas segala ilmu dan kesabarannya.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- 3. MAIN CONTENT CONTAINER (MULTI-PAGE / MULTI-SECTION WITH ANIMATION) -->
+  <!-- ===================================================================== -->
+  <main id="main-content" class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-6 pb-32">
+
+    <!-- =================================================================== -->
+    <!-- HALAMAN 1: BERANDA UCAPAN SELAMAT HARI GURU                         -->
+    <!-- =================================================================== -->
+    <section id="page-ucapan" class="page-section page-active">
+      <div class="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-navy-900 via-navy-800 to-[#14434A] text-white p-7 sm:p-12 lg:p-16 shadow-2xl border border-amber-400/20">
+        
+        <!-- Soft Organic Decorative Shapes inside Hero -->
+        <div class="absolute -top-20 -right-20 w-80 h-80 bg-amber-400/15 organic-blob blur-2xl animate-float-slow"></div>
+        <div class="absolute -bottom-24 -left-16 w-80 h-80 bg-sage-500/25 organic-blob blur-2xl animate-float-reverse"></div>
+
+        <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <!-- Left Text Column -->
+          <div class="lg:col-span-7 space-y-6">
+            <div class="reveal-item inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-amber-300/30 text-amber-300 text-xs sm:text-sm font-medium">
+              <i class="fa-solid fa-calendar-day"></i>
+              <span>Rabu, 25 November 2026 • Hari Guru Nasional</span>
+            </div>
+
+            <h1 class="reveal-item font-serif text-3xl sm:text-5xl lg:text-[3.35rem] font-bold leading-[1.15] tracking-tight">
+              Terima Kasih, <span class="text-amber-400 italic">Pelita Ilmu</span> SMA Negeri 1 Kabangka
+            </h1>
+
+            <p class="reveal-item text-slate-200 text-base sm:text-lg leading-relaxed font-light">
+              Di setiap langkah kami meraih cita, ada kesabaran Bapak dan Ibu Guru yang tak pernah lelah membimbing. Di setiap aksara yang kami pahami, ada ketulusan hati yang mengalir tanpa henti.
+            </p>
+
+            <div class="reveal-item p-5 rounded-3xl bg-white/10 border border-white/15 backdrop-blur-md">
+              <p class="font-poem italic text-amber-200 text-sm sm:text-base leading-relaxed">
+                “Guru bukan sekadar pengajar di depan papan tulis, melainkan penuntun cahaya yang menyalakan harapan di ruang-ruang masa depan anak bangsa.”
+              </p>
+              <p class="text-xs text-slate-300 mt-2.5 font-medium">— Keluarga Besar Siswa &amp; Alumni SMAN 1 Kabangka</p>
+            </div>
+
+            <!-- Interactive Quick Navigation Buttons -->
+            <div class="reveal-item pt-2 flex flex-wrap items-center gap-3">
+              <button onclick="switchPage('doa')" class="px-6 py-3.5 rounded-full bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold text-sm flex items-center gap-2.5 shadow-lg shadow-amber-500/25 transition-all hover:scale-105 cursor-pointer">
+                <i class="fa-solid fa-hands-praying"></i>
+                <span>Baca Doa Terbaik</span>
+              </button>
+              <button onclick="switchPage('puisi')" class="px-6 py-3.5 rounded-full bg-white/15 hover:bg-white/25 text-white border border-white/25 font-semibold text-sm flex items-center gap-2.5 transition-all hover:scale-105 cursor-pointer">
+                <i class="fa-solid fa-feather-pointed text-amber-300"></i>
+                <span>Bait Puisi Guru</span>
+              </button>
+              <button onclick="switchPage('galeri')" class="px-6 py-3.5 rounded-full bg-sage-600/80 hover:bg-sage-500 text-white border border-sage-400/30 font-semibold text-sm flex items-center gap-2.5 transition-all hover:scale-105 cursor-pointer">
+                <i class="fa-solid fa-images text-amber-200"></i>
+                <span>Galeri Kebersamaan</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Featured Photo Frame -->
+          <div class="lg:col-span-5 reveal-item">
+            <div class="relative mx-auto max-w-md">
+              <!-- Golden Decorative Backing -->
+              <div class="absolute -inset-3 rounded-[2.25rem] bg-gradient-to-tr from-amber-500/40 via-sage-500/30 to-amber-300/40 blur-md animate-pulse-glow"></div>
+              
+              <div class="relative rounded-[2rem] overflow-hidden border-2 border-amber-400/40 shadow-2xl bg-navy-950">
+                <img 
+                  src="{{ url_for('static', filename='img/foto1.jpg') }}"  
+                  alt="Dewan Guru SMA Negeri 1 Kabangka" 
+                  class="w-full h-72 sm:h-80 object-cover object-center"
+                  onerror="this.src='https://placehold.co/800x600/0F294A/FBBF24?text=Dewan+Guru+SMAN+1+Kabangka'"
+                />
+                <div class="p-4 sm:p-5 bg-gradient-to-t from-navy-950 via-navy-900/95 to-navy-900/80">
+                  <div class="flex items-center justify-between gap-2">
+                    <div>
+                      <p class="font-serif font-semibold text-amber-300 text-base">Dewan Guru SMAN 1 Kabangka</p>
+                      <p class="text-xs text-slate-300 mt-0.5">Dedikasi, Kebersamaan &amp; Ketulusan Mengabdi</p>
+                    </div>
+                    <span class="w-10 h-10 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
+                      <i class="fa-solid fa-award"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Pillars of Teacher Dedication Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
+        <div class="reveal-item glass-card rounded-3xl p-6 hover:-translate-y-1.5 transition-all duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-navy-900 text-amber-400 flex items-center justify-center text-xl mb-4 shadow-md">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-navy-900 mb-2">Inspirasi Tanpa Batas</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Setiap nasihat dan keteladanan Bapak &amp; Ibu Guru menjadi kompas moral yang menuntun langkah kami menatap masa depan.
+          </p>
+        </div>
+
+        <div class="reveal-item glass-card rounded-3xl p-6 hover:-translate-y-1.5 transition-all duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-amber-600 text-white flex items-center justify-center text-xl mb-4 shadow-md">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-navy-900 mb-2">Kesabaran &amp; Kasih Sayang</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Membimbing beragam karakter murid dengan senyum tulus, kesabaran luas, dan kasih sayang layaknya orang tua kedua di sekolah.
+          </p>
+        </div>
+
+        <div class="reveal-item glass-card rounded-3xl p-6 hover:-translate-y-1.5 transition-all duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-sage-600 text-white flex items-center justify-center text-xl mb-4 shadow-md">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-navy-900 mb-2">Amal Jariyah Abadi</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Ilmu yang bermanfaat adalah cahaya yang tidak pernah padam, mengalirkan pahala dan keberkahan sepanjang hayat.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- HALAMAN 2: DOA TERBAIK UNTUK BAPAK & IBU GURU                       -->
+    <!-- =================================================================== -->
+    <section id="page-doa" class="page-section page-hidden">
+      <div class="text-center max-w-2xl mx-auto mb-10 reveal-item">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider mb-3">
+          <i class="fa-solid fa-hands-praying"></i> Untaian Munajat &amp; Harapan
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900">
+          Doa Terbaik Untuk <span class="text-amber-600 italic">Bapak &amp; Ibu Guru</span>
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
+          Di momentum Hari Guru Nasional 25 November 2026 ini, kami memanjatkan doa tulus kehadirat Tuhan Yang Maha Esa untuk seluruh dewan guru SMA Negeri 1 Kabangka.
+        </p>
+      </div>
+
+      <!-- Prayer Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Doa 1 -->
+        <div class="reveal-item glass-card rounded-[2rem] p-7 sm:p-8 relative overflow-hidden group hover:border-amber-400/50 transition-all duration-300">
+          <div class="absolute -right-6 -top-6 w-28 h-28 rounded-full bg-amber-400/10 group-hover:scale-125 transition-transform duration-500"></div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-navy-900 to-navy-700 text-amber-400 flex items-center justify-center text-xl shrink-0 shadow-md">
+              <i class="fa-solid fa-shield-heart"></i>
+            </div>
+            <div>
+              <span class="text-xs font-bold text-amber-700 uppercase tracking-wider">Doa Pertama</span>
+              <h3 class="font-serif text-xl font-bold text-navy-900 mt-1 mb-3">Kesehatan &amp; Keberkahan Usia</h3>
+              <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                “Ya Allah, limpahkanlah kesehatan lahir dan batin, kekuatan raga, serta umur yang panjang lagi penuh keberkahan kepada seluruh Bapak dan Ibu Guru kami di SMA Negeri 1 Kabangka agar senantiasa bahagia dalam pengabdian.”
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Doa 2 -->
+        <div class="reveal-item glass-card rounded-[2rem] p-7 sm:p-8 relative overflow-hidden group hover:border-amber-400/50 transition-all duration-300">
+          <div class="absolute -right-6 -top-6 w-28 h-28 rounded-full bg-sage-500/10 group-hover:scale-125 transition-transform duration-500"></div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-sage-600 to-sage-500 text-white flex items-center justify-center text-xl shrink-0 shadow-md">
+              <i class="fa-solid fa-book-quran"></i>
+            </div>
+            <div>
+              <span class="text-xs font-bold text-sage-600 uppercase tracking-wider">Doa Kedua</span>
+              <h3 class="font-serif text-xl font-bold text-navy-900 mt-1 mb-3">Ilmu Sebagai Amal Jariyah</h3>
+              <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                “Jadikanlah setiap huruf yang diajarkan, setiap nasihat yang disampaikan, dan setiap langkah kaki menuju ruang kelas sebagai ladang pahala jariyah yang terus mengalir tiada putus hingga akhirat kelak.”
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Doa 3 -->
+        <div class="reveal-item glass-card rounded-[2rem] p-7 sm:p-8 relative overflow-hidden group hover:border-amber-400/50 transition-all duration-300">
+          <div class="absolute -right-6 -top-6 w-28 h-28 rounded-full bg-amber-400/10 group-hover:scale-125 transition-transform duration-500"></div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-600 to-amber-500 text-white flex items-center justify-center text-xl shrink-0 shadow-md">
+              <i class="fa-solid fa-sun"></i>
+            </div>
+            <div>
+              <span class="text-xs font-bold text-amber-700 uppercase tracking-wider">Doa Ketiga</span>
+              <h3 class="font-serif text-xl font-bold text-navy-900 mt-1 mb-3">Kelapangan Hati &amp; Kesabaran</h3>
+              <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                “Anugerahkanlah keluasan hati, kesabaran seluas samudra, serta keteguhan jiwa bagi para guru kami dalam mendidik, membina karakter, dan menyalakan cahaya harapan bagi generasi penerus bangsa.”
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Doa 4 -->
+        <div class="reveal-item glass-card rounded-[2rem] p-7 sm:p-8 relative overflow-hidden group hover:border-amber-400/50 transition-all duration-300">
+          <div class="absolute -right-6 -top-6 w-28 h-28 rounded-full bg-navy-900/10 group-hover:scale-125 transition-transform duration-500"></div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-navy-800 to-sage-600 text-amber-300 flex items-center justify-center text-xl shrink-0 shadow-md">
+              <i class="fa-solid fa-house-chimney-heart"></i>
+            </div>
+            <div>
+              <span class="text-xs font-bold text-navy-700 uppercase tracking-wider">Doa Keempat</span>
+              <h3 class="font-serif text-xl font-bold text-navy-900 mt-1 mb-3">Kebahagiaan Keluarga &amp; Rezeki Berkah</h3>
+              <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                “Limpahkanlah ketenteraman, keharmonisan, dan rezeki yang halal lagi berkah bagi keluarga besar Bapak dan Ibu Guru. Muliakanlah derajat mereka di dunia maupun di akhirat. Aamiin Ya Rabbal ‘Alamin.”
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive "Aamiin" Counter Button -->
+      <div class="reveal-item mt-8 glass-navy rounded-3xl p-6 sm:p-8 text-center text-white flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-left">
+          <h4 class="font-serif text-xl font-bold text-amber-300">Aminkan Doa Bersama</h4>
+          <p class="text-xs sm:text-sm text-slate-300 mt-1">Ketuk tombol di samping untuk mengirimkan doa dan ucapan Aamiin bagi para guru tercinta.</p>
+        </div>
+        <button id="aamiin-btn" class="px-7 py-3.5 rounded-full bg-amber-500 hover:bg-amber-400 text-navy-950 font-bold text-sm flex items-center gap-2.5 shadow-lg transition-all hover:scale-105 active:scale-95 shrink-0 cursor-pointer">
+          <i class="fa-solid fa-hands-praying"></i>
+          <span>Aamiin Ya Rabbal ‘Alamin (<span id="aamiin-count">126</span>)</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- HALAMAN 3: PUISI UNTUK GURU TANPA TANDA JASA                        -->
+    <!-- =================================================================== -->
+    <section id="page-puisi" class="page-section page-hidden">
+      <div class="max-w-3xl mx-auto">
+        <div class="relative rounded-[2.5rem] bg-gradient-to-b from-white via-cream-50 to-amber-50/60 border border-amber-300/40 p-7 sm:p-12 lg:p-16 shadow-2xl overflow-hidden">
+          
+          <!-- Subtle Watermark Quill -->
+          <div class="absolute top-8 right-8 text-amber-500/10 text-7xl sm:text-8xl pointer-events-none">
+            <i class="fa-solid fa-feather-pointed"></i>
+          </div>
+
+          <!-- Poem Header -->
+          <div class="text-center mb-10 reveal-item">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-navy-900 text-amber-300 text-xs font-semibold tracking-wider uppercase mb-4">
+              <i class="fa-solid fa-pen-nib"></i> Karya Puisi Spesial Hari Guru
+            </span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold text-navy-900 leading-tight">
+              Pelita Tanpa Tanda Jasa
+            </h2>
+            <p class="text-xs sm:text-sm text-amber-700 font-medium mt-2">
+              Dipersembahkan untuk Dewan Guru SMA Negeri 1 Kabangka • 25 November 2026
+            </p>
+            <div class="w-20 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto mt-5 rounded-full"></div>
+          </div>
+
+          <!-- Stanzas with Staggered Reveal -->
+          <div class="space-y-8 font-poem text-navy-900 text-base sm:text-lg lg:text-xl leading-relaxed text-center">
+            
+            <div class="reveal-item p-4 rounded-2xl hover:bg-amber-100/40 transition-colors">
+              <p>Di pagi yang masih berembun di bumi Kabangka,</p>
+              <p>Langkahmu hadir membawa cahaya penuh makna,</p>
+              <p>Bukan mahkota emas yang engkau pinta,</p>
+              <p>Melainkan mekarnya mimpi di mata anak-anak bangsa.</p>
+            </div>
+
+            <div class="reveal-item p-4 rounded-2xl hover:bg-amber-100/40 transition-colors">
+              <p>Di depan papan tulis yang sunyi dan bersahaja,</p>
+              <p>Engkau ukir aksara kebijaksanaan dengan sabar yang nyata,</p>
+              <p>Menghapus ragu, menuntun langkah yang sempat goyah,</p>
+              <p>Mengubah ketidakmengertian menjadi lentera yang menyala.</p>
+            </div>
+
+            <div class="reveal-item p-4 rounded-2xl hover:bg-amber-100/40 transition-colors">
+              <p>Seragam cokelat, biru kebanggaan, hingga tenun adat Nusantara,</p>
+              <p>Menjadi saksi ketulusan yang tak pernah mengenal lelah,</p>
+              <p>Peluh yang jatuh tak pernah engkau hitung harganya,</p>
+              <p>Sebab bagimu, melihat kami tumbuh adalah bahagia yang terindah.</p>
+            </div>
+
+            <div class="reveal-item p-4 rounded-2xl hover:bg-amber-100/40 transition-colors">
+              <p>Wahai Pahlawan Tanpa Tanda Jasa,</p>
+              <p>Engkau laksana pelita yang rela membakar diri demi terang semesta,</p>
+              <p>Namamu mungkin tak terpahat di tugu pualam dunia,</p>
+              <p>Namun jasamu abadi di setiap denyut nadi dan doa kami selamanya.</p>
+            </div>
+
+          </div>
+
+          <!-- Poem Footer Signature -->
+          <div class="reveal-item mt-10 pt-6 border-t border-amber-200/70 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div>
+              <p class="font-serif italic text-navy-900 font-semibold text-base">Selamat Hari Guru Nasional 2026</p>
+              <p class="text-xs text-slate-500">Hormat &amp; Takzim Kami, Keluarga Besar SMAN 1 Kabangka</p>
+            </div>
+            <button onclick="triggerPetalsBurst(28)" class="px-5 py-2.5 rounded-full bg-navy-900 hover:bg-navy-800 text-amber-300 text-xs font-semibold flex items-center gap-2 transition-all hover:scale-105 cursor-pointer">
+              <i class="fa-solid fa-sparkles"></i>
+              <span>Tabur Bunga Untuk Guru</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- HALAMAN 4: GALERI FOTO KEBERSAMAAN DEWAN GURU SMAN 1 KABANGKA       -->
+    <!-- =================================================================== -->
+    <section id="page-galeri" class="page-section page-hidden">
+      <div class="text-center max-w-2xl mx-auto mb-10 reveal-item">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sage-100 text-sage-600 text-xs font-bold uppercase tracking-wider mb-3">
+          <i class="fa-solid fa-camera-retro"></i> Jejak Kenangan &amp; Kebersamaan
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900">
+          Galeri Kebersamaan <span class="text-amber-600 italic">Dewan Guru</span>
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
+          Potret kehangatan, kekompakan, dan dedikasi keluarga besar Bapak &amp; Ibu Guru SMA Negeri 1 Kabangka dalam berbagai momen berharga. Klik foto untuk memperbesar.
+        </p>
+      </div>
+
+      <!-- Responsive Bento / Masonry Photo Grid (All 9 Uploaded Images) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Foto 1 -->
+        <div onclick="openLightbox(0)" class="reveal-item gallery-card glass-card rounded-3xl overflow-hidden cursor-pointer group flex flex-col">
+          <div class="relative h-64 overflow-hidden bg-navy-900">
+            <img src="{{ url_for('static', filename='img/foto1.jpg') }}" alt="Dewan Guru SMAN 1 Kabangka Berbusana Adat" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x450/0F294A/FBBF24?text=SMAN+1+Kabangka+1'" />
+            <div class="absolute inset-0 bg-gradient-to-t from-navy-950/75 via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+            <span class="absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center text-xs group-hover:bg-amber-500 group-hover:text-navy-950 transition-colors">
+              <i class="fa-solid fa-expand"></i>
+            </span>
+            <div class="absolute bottom-3.5 left-4 right-4 text-white">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-amber-300">Identitas &amp; Kebanggaan</span>
+              <h3 class="font-serif text-base font-bold leading-snug">Dewan Guru SMA Negeri 1 Kabangka</h3>
+            </div>
+          </div>
+          <div class="p-4 text-xs text-slate-600 leading-relaxed">
+            Kebersamaan keluarga besar dewan guru dalam balutan busana adat daerah yang anggun di depan gerbang SMA Negeri 1 Kabangka.
+          </div>
+        </div>
+
+        <!-- Foto 2 -->
+        <div onclick="openLightbox(1)" class="reveal-item gallery-card glass-card rounded-3xl overflow-hidden cursor-pointer group flex flex-col">
+          <div class="relative h-64 overflow-hidden bg-navy-900">
+            <img src="{{ url_for('static', filename='img/foto2.jpg') }}" alt="Kekompakan Guru dalam Busana Adat Nusantara" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x450/0F294A/FBBF24?text=SMAN+1+Kabangka+2'" />
+            <div class="absolute inset-0 bg-gradient-to-t from-navy-950/75 via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+            <span class="absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center text-xs group-hover:bg-amber-500 group-hover:text-navy-950 transition-colors">
+              <i class="fa-solid fa-expand"></i>
+            </span>
+            <div class="absolute bottom-3.5 left-4 right-4 text-white">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-amber-300">Pesona Budaya</span>
+              <h3 class="font-serif text-base font-bold leading-snug">Harmoni dalam Balutan Tenun &amp; Adat</h3>
+            </div>
+          </div>
+          <div class="p-4 text-xs text-slate-600 leading-relaxed">
+            Senyum ceria Bapak dan Ibu Guru merayakan kekayaan budaya dan tradisi bersama di halaman sekolah tercinta.
+          </div>
+        </div>
+
+        <!-- Foto 3 -->
+        <div onclick="openLightbox(2)" class="reveal-item gallery-card glass-card rounded-3xl overflow-hidden cursor-pointer group flex flex-col">
+          <div class="relative h-64 overflow-hidden bg-navy-900">
+            <img src="{{ url_for('static', filename='img/foto3.jpg') }}" alt="Guru dan Siswa Angkatan Aksara SMAN 1 Kabangka" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x450/0F294A/FBBF24?text=SMAN+1+Kabangka+3'" />
+            <div class="absolute inset-0 bg-gradient-to-t from-navy-950/75 via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+            <span class="absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center text-xs group-hover:bg-amber-500 group-hover:text-navy-950 transition-colors">
+              <i class="fa-solid fa-expand"></i>
+            </span>
+            <div class="absolute bottom-3.5 left-4 right-4 text-white">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-amber-300">Guru &amp; Murid</span>
+              <h3 class="font-serif text-base font-bold leading-snug">Keluarga Besar SMAN 1 Kabangka</h3>
+            </div>
+          </div>
+          <div class="p-4 text-xs text-slate-600 leading-relaxed">
+            Momen kebersamaan penuh kehangatan antara dewan guru dan para siswa-siswi penerus generasi bangsa.
+          </div>
+        </div>
+
+        <!-- Foto 4 -->
+        <div onclick="openLightbox(3)" class="reveal-item gallery-card glass-card rounded-3xl overflow-hidden cursor-pointer group flex flex-col">
+          <div class="relative h-64 overflow-hidden bg-navy-900">
+            <img src="{{ url_for('static', filename='img/foto4.jpg') }}" alt="Dewan Guru Berseragam KORPRI" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x450/0F294A/FBBF24?text=SMAN+1+Kabangka+4'" />
+            <div class="absolute inset-0 bg-gradient-to-t from-navy-950/75 via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+            <span class="absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center text-xs group-hover:bg-amber-500 group-hover:text-navy-950 transition-colors">
+              <i class="fa-solid fa-expand"></i>
+            </span>
+            <div class="absolute bottom-3.5 left-4 right-4 text-white">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-amber-300">Semangat Pengabdian</span>
+              <h3 class="font-serif text-base font-bold leading-snug">Wibawa Seragam KORPRI</h3>
+            </div>
+          </div>
+          <div class="p-4 text-xs text-slate-600 leading-relaxed">
+            Kompak berpose dengan seragam batik KORPRI biru kebanggaan, mencerminkan semangat pengabdian bagi negeri.
+          </div>
+        </div>
+
+        <!-- Foto 5 -->
+        <div onclick="openLightbox(4)" class="reveal-item gallery-card glass-card rounded-3xl overflow-hidden cursor-pointer group flex flex-col">
+          <div class="relative h-64 overflow-hidden bg-navy-900">
+            <img src="{{ url_for('static', filename='img/foto5.jpg') }}" alt="Ibu Guru Berseragam KORPRI" class="w-full h-full object-cover object-top" onerror="this.src='https://placehold.co/600x450/0F294A/FBBF24?text=SMAN+1+Kabangka+5'" />
+            <div class="absolute inset-0 bg-gradient-to-t from-navy-950/75 via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+            <span class="absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center text-xs group-hover:bg-amber-500 group-hover:text-navy-950 transition-colors">
+              <i class="fa-solid fa-expand"></i>
+            </span>
+            <div class="absolute bottom-3.5 left-4 right-4 text-white">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-amber-300">Silaturahmi</span>
+              <h3 class="font-serif text-base font-bold leading-snug">Kekompakan Ibu-Ibu Guru</h3>
+            </div>
+          </div>
+          <div class="p-4 text-xs text-slate-600 leading-relaxed">
+            Kebersamaan penuh keakraban ibu-ibu guru dalam balutan seragam KORPRI di sela-sela kegiatan bersama.
+          </div>
+        </div>
+
+        <!-- Foto 6 -->
+        <div onclick="openLightbox(5)" class="reveal-item gallery-card glass-card rounded-3xl overflow-hidden cursor-pointer group flex flex-col">
+          <div class="relative h-64 overflow-hidden bg-navy-900">
+            <img src="{{ url_for('static', filename='img/foto6.jpg') }}" alt="Guru dan Perwakilan Siswa" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x450/0F294A/FBBF24?text=SMAN+1+Kabangka+6'" />
+            <div class="absolute inset-0 bg-gradient-to-t from-navy-950/75 via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+            <span class="absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center text-xs group-hover:bg-amber-500 group-hover:text-navy-950 transition-colors">
+              <i class="fa-solid fa-expand"></i>
+            </span>
+            <div class="absolute bottom-3.5 left-4 right-4 text-white">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-amber-300">Apresiasi Siswa</span>
+              <h3 class="font-serif text-base font-bold leading-snug">Buket Bunga &amp; Penghormatan</h3>
+            </div>
+          </div>
+          <div class="p-4 text-xs text-slate-600 leading-relaxed">
+            Momen mengharukan saat para siswa mempersembahkan buket bunga sebagai tanda cinta dan hormat kepada Bapak &amp; Ibu Guru.
+          </div>
+        </div>
+
+        <!-- Foto 7 -->
+        <div onclick="openLightbox(6)" class="reveal-item gallery-card glass-card rounded-3xl overflow-hidden cursor-pointer group flex flex-col">
+          <div class="relative h-64 overflow-hidden bg-navy-900">
+            <img src="{{ url_for('static', filename='img/foto7.jpg') }}" alt="Ibu Guru Berbusana Olahraga Merah Muda" class="w-full h-full object-cover object-top" onerror="this.src='https://placehold.co/600x450/0F294A/FBBF24?text=SMAN+1+Kabangka+7'" />
+            <div class="absolute inset-0 bg-gradient-to-t from-navy-950/75 via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+            <span class="absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center text-xs group-hover:bg-amber-500 group-hover:text-navy-950 transition-colors">
+              <i class="fa-solid fa-expand"></i>
+            </span>
+            <div class="absolute bottom-3.5 left-4 right-4 text-white">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-amber-300">Sehat &amp; Ceria</span>
+              <h3 class="font-serif text-base font-bold leading-snug">Keceriaan Pagi di Teras Sekolah</h3>
+            </div>
+          </div>
+          <div class="p-4 text-xs text-slate-600 leading-relaxed">
+            Tawa bahagia dan semangat kebersamaan ibu-ibu guru dengan seragam nuansa merah muda yang hangat.
+          </div>
+        </div>
+
+        <!-- Foto 8 -->
+        <div onclick="openLightbox(7)" class="reveal-item gallery-card glass-card rounded-3xl overflow-hidden cursor-pointer group flex flex-col">
+          <div class="relative h-64 overflow-hidden bg-navy-900">
+            <img src="{{ url_for('static', filename='img/foto8.jpg') }}" alt="Bapak dan Ibu Guru Berseragam Dinas" class="w-full h-full object-cover object-top" onerror="this.src='https://placehold.co/600x450/0F294A/FBBF24?text=SMAN+1+Kabangka+8'" />
+            <div class="absolute inset-0 bg-gradient-to-t from-navy-950/75 via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+            <span class="absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center text-xs group-hover:bg-amber-500 group-hover:text-navy-950 transition-colors">
+              <i class="fa-solid fa-expand"></i>
+            </span>
+            <div class="absolute bottom-3.5 left-4 right-4 text-white">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-amber-300">Dedikasi Harian</span>
+              <h3 class="font-serif text-base font-bold leading-snug">Siap Mengabdi &amp; Mencerdaskan</h3>
+            </div>
+          </div>
+          <div class="p-4 text-xs text-slate-600 leading-relaxed">
+            Kebersamaan Bapak dan Ibu Guru dalam seragam dinas harian sebelum memulai aktivitas belajar mengajar.
+          </div>
+        </div>
+
+        <!-- Foto 9 -->
+        <div onclick="openLightbox(8)" class="reveal-item gallery-card glass-card rounded-3xl overflow-hidden cursor-pointer group flex flex-col">
+          <div class="relative h-64 overflow-hidden bg-navy-900">
+            <img src="{{ url_for('static', filename='img/foto9.jpg') }}" alt="Ibu Guru Bekerja Bersama dengan Laptop" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x450/0F294A/FBBF24?text=SMAN+1+Kabangka+9'" />
+            <div class="absolute inset-0 bg-gradient-to-t from-navy-950/75 via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+            <span class="absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center text-xs group-hover:bg-amber-500 group-hover:text-navy-950 transition-colors">
+              <i class="fa-solid fa-expand"></i>
+            </span>
+            <div class="absolute bottom-3.5 left-4 right-4 text-white">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-amber-300">Inovasi Pendidikan</span>
+              <h3 class="font-serif text-base font-bold leading-snug">Guru Adaptif &amp; Inovatif</h3>
+            </div>
+          </div>
+          <div class="p-4 text-xs text-slate-600 leading-relaxed">
+            Semangat kolaborasi para pendidik SMAN 1 Kabangka yang terus berinovasi mengikuti perkembangan zaman.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- 4. FLOATING BOTTOM NAVIGATION BAR (MULTI-SECTION SWITCHER)            -->
+  <!-- ===================================================================== -->
+  <nav aria-label="Navigasi Halaman" class="fixed bottom-4 left-1/2 -translate-x-1/2 z-30 w-[94%] max-w-xl">
+    <div class="glass-navy p-1.5 rounded-full shadow-2xl border border-amber-400/30 grid grid-cols-4 gap-1">
+      <button onclick="switchPage('ucapan')" id="nav-ucapan" class="nav-btn active-nav flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 py-2.5 px-2 rounded-full text-xs font-semibold transition-all duration-300 bg-amber-500 text-navy-950 shadow-md cursor-pointer">
+        <i class="fa-solid fa-house-heart text-sm"></i>
+        <span>Ucapan</span>
+      </button>
+      <button onclick="switchPage('doa')" id="nav-doa" class="nav-btn flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 py-2.5 px-2 rounded-full text-xs font-semibold text-slate-200 hover:text-amber-300 transition-all duration-300 cursor-pointer">
+        <i class="fa-solid fa-hands-praying text-sm"></i>
+        <span>Doa</span>
+      </button>
+      <button onclick="switchPage('puisi')" id="nav-puisi" class="nav-btn flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 py-2.5 px-2 rounded-full text-xs font-semibold text-slate-200 hover:text-amber-300 transition-all duration-300 cursor-pointer">
+        <i class="fa-solid fa-feather-pointed text-sm"></i>
+        <span>Puisi</span>
+      </button>
+      <button onclick="switchPage('galeri')" id="nav-galeri" class="nav-btn flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 py-2.5 px-2 rounded-full text-xs font-semibold text-slate-200 hover:text-amber-300 transition-all duration-300 cursor-pointer">
+        <i class="fa-solid fa-images text-sm"></i>
+        <span>Galeri</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===================================================================== -->
+  <!-- 5. LIGHTBOX MODAL UNTUK MEMPERBESAR FOTO GALERI                       -->
+  <!-- ===================================================================== -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-950/90 backdrop-blur-lg p-4 sm:p-8 opacity-0 transition-opacity duration-300">
+    <div class="relative max-w-4xl w-full bg-navy-900 border border-amber-400/30 rounded-[2rem] overflow-hidden shadow-2xl">
+      <!-- Close Button -->
+      <button onclick="closeLightbox()" aria-label="Tutup Galeri" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-navy-950/70 hover:bg-amber-500 text-white hover:text-navy-950 flex items-center justify-center transition-colors cursor-pointer">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+
+      <!-- Previous / Next Controls -->
+      <button onclick="navigateLightbox(-1)" aria-label="Foto Sebelumnya" class="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-navy-950/70 hover:bg-amber-500 text-white hover:text-navy-950 flex items-center justify-center transition-colors cursor-pointer">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button onclick="navigateLightbox(1)" aria-label="Foto Berikutnya" class="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-navy-950/70 hover:bg-amber-500 text-white hover:text-navy-950 flex items-center justify-center transition-colors cursor-pointer">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
+      <!-- Image Container -->
+      <div class="bg-black/40 flex items-center justify-center max-h-[68vh] overflow-hidden">
+        <img id="lightbox-img" src="" alt="Foto Kebersamaan Guru" class="max-h-[68vh] w-auto object-contain" />
+      </div>
+
+      <!-- Caption Bar -->
+      <div class="p-5 sm:p-6 bg-navy-900 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <span id="lightbox-tag" class="text-xs font-bold uppercase tracking-wider text-amber-400">Momen Kebersamaan</span>
+          <h3 id="lightbox-title" class="font-serif text-lg sm:text-xl font-bold mt-0.5">Judul Foto</h3>
+          <p id="lightbox-desc" class="text-xs sm:text-sm text-slate-300 mt-1">Deskripsi foto</p>
+        </div>
+        <span id="lightbox-counter" class="text-xs font-semibold px-3 py-1.5 rounded-full bg-white/10 text-amber-300 self-start sm:self-center shrink-0">
+          1 / 9
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- JAVASCRIPT: WEB AUDIO INSTRUMENTAL, ANIMASI PARTIKEL, & NAVIGASI      -->
+  <!-- ===================================================================== -->
+  <script>
+    /**
+     * 1. DATA GALERI FOTO DEWAN GURU SMAN 1 KABANGKA
+     */
+    const galeriData = [
+  {
+    src: "{{ url_for('static', filename='img/foto1.jpg') }}",
+    judul: "Kebersamaan Busana Adat",
+    ket: "Dewan guru SMA Negeri 1 Kabangka"
+  },
+  {
+    src: "{{ url_for('static', filename='img/foto2.jpg') }}",
+    judul: "Semangat & Senyum Hangat",
+    ket: "Dewan guru SMA Negeri 1 Kabangka"
+  },
+  {
+    src: "{{ url_for('static', filename='img/foto3.jpg') }}",
+    judul: "Pengabdian di Ruang Kelas",
+    ket: "Dewan guru SMA Negeri 1 Kabangka"
+  },
+  {
+    src: "{{ url_for('static', filename='img/foto4.jpg') }}",
+    judul: "Dedikasi & Literasi Digital",
+    ket: "Dewan guru SMA Negeri 1 Kabangka"
+  },
+  {
+    src: "{{ url_for('static', filename='img/foto5.jpg') }}",
+    judul: "Keluarga Besar Aksara 23–26",
+    ket: "SMA Negeri 1 Kabangka"
+  },
+  {
+    src: "{{ url_for('static', filename='img/foto6.jpg') }}",
+    judul: "Silaturahmi Penuh Makna",
+    ket: "Dewan guru SMA Negeri 1 Kabangka"
+  },
+  {
+    src: "{{ url_for('static', filename='img/foto7.jpg') }}",
+    judul: "Solidaritas Pendidik",
+    ket: "Dewan guru SMA Negeri 1 Kabangka"
+  },
+  {
+    src: "{{ url_for('static', filename='img/foto8.jpg') }}",
+    judul: "Gerbang SMA Negeri 1 Kabangka",
+    ket: "SMA Negeri 1 Kabangka"
+  },
+  {
+    src: "{{ url_for('static', filename='img/foto9.jpg') }}",
+    judul: "Jejak Langkah & Apresiasi",
+    ket: "SMA Negeri 1 Kabangka"
+  }
+];
+    let currentLightboxIndex = 0;
+
+    function openLightbox(index) {
+      currentLightboxIndex = index;
+      updateLightboxContent();
+      const modal = document.getElementById('lightbox-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      requestAnimationFrame(() => {
+        modal.classList.remove('opacity-0');
+      });
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('lightbox-modal');
+      modal.classList.add('opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }, 300);
+    }
+
+    function navigateLightbox(step) {
+      currentLightboxIndex = (currentLightboxIndex + step + galleryItems.length) % galleryItems.length;
+      updateLightboxContent();
+    }
+
+    function updateLightboxContent() {
+      const item = galleryItems[currentLightboxIndex];
+      const img = document.getElementById('lightbox-img');
+      img.src = item.src;
+      img.onerror = function() {
+        this.src = 'https://placehold.co/800x600/0F294A/FBBF24?text=SMAN+1+Kabangka';
+      };
+      document.getElementById('lightbox-tag').textContent = item.tag;
+      document.getElementById('lightbox-title').textContent = item.title;
+      document.getElementById('lightbox-desc').textContent = item.desc;
+      document.getElementById('lightbox-counter').textContent = `${currentLightboxIndex + 1} / ${galleryItems.length}`;
+    }
+
+    // Close lightbox on backdrop click or Escape key
+    document.getElementById('lightbox-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'lightbox-modal') closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('lightbox-modal');
+      if (!modal.classList.contains('hidden')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') navigateLightbox(1);
+        if (e.key === 'ArrowLeft') navigateLightbox(-1);
+      }
+    });
+
+    /**
+     * 2. MULTI-PAGE NAVIGATION & STAGGERED REVEAL ANIMATION
+     */
+    function switchPage(pageKey) {
+      const pages = ['ucapan', 'doa', 'puisi', 'galeri'];
+      pages.forEach((key) => {
+        const section = document.getElementById(`page-${key}`);
+        const navBtn = document.getElementById(`nav-${key}`);
+        if (key === pageKey) {
+          section.classList.remove('page-hidden');
+          section.classList.add('page-active');
+          navBtn.classList.add('bg-amber-500', 'text-navy-950', 'shadow-md');
+          navBtn.classList.remove('text-slate-200', 'hover:text-amber-300');
+          triggerSectionReveal(section);
+        } else {
+          section.classList.remove('page-active');
+          section.classList.add('page-hidden');
+          navBtn.classList.remove('bg-amber-500', 'text-navy-950', 'shadow-md');
+          navBtn.classList.add('text-slate-200', 'hover:text-amber-300');
+        }
+      });
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function triggerSectionReveal(section) {
+      const items = section.querySelectorAll('.reveal-item');
+      items.forEach((el) => el.classList.remove('is-visible'));
+      items.forEach((el, idx) => {
+        setTimeout(() => {
+          el.classList.add('is-visible');
+        }, 110 * idx + 80);
+      });
+    }
+
+    /**
+     * 3. MUSIK LATAR INSTRUMENTAL LEMBUT (WEB AUDIO API SYNTHESIZER)
+     * Melodi piano & pad hangat bertema "Hymne Guru & Terima Kasihku"
+     * Bebas error blokir autoplay/CORS eksternal & terdengar lembut menyentuh hati.
+     */
+    class GentleTeacherMusic {
+      constructor() {
+        this.ctx = null;
+        this.isPlaying = false;
+        this.timerId = null;
+        this.stepIndex = 0;
+
+        // Frekuensi nada dalam Hz (Tangga Nada C Mayor / A Minor Hangat)
+        const N = {
+          C3: 130.81, D3: 146.83, E3: 164.81, F3: 174.61, G3: 196.00, A3: 220.00, B3: 246.94,
+          C4: 261.63, D4: 293.66, E4: 329.63, F4: 349.23, G4: 392.00, A4: 440.00, B4: 493.88,
+          C5: 523.25, D5: 587.33, E5: 659.25, F5: 698.46, G5: 783.99
+        };
+
+        // Rangkaian melodi & harmoni instrumental lembut (inspirasi Hymne Guru & Terima Kasihku)
+        this.sequence = [
+          // Frasa 1: Terpujilah wahai engkau ibu bapak guru...
+          { m: N.G4, b: N.C3, c: [N.E4, N.G4], d: 650 },
+          { m: N.E4, b: null, c: null, d: 650 },
+          { m: N.F4, b: null, c: null, d: 650 },
+          { m: N.G4, b: N.C3, c: [N.E4, N.C5], d: 1100 },
+          { m: N.A4, b: N.F3, c: [N.F4, N.C5], d: 650 },
+          { m: N.G4, b: null, c: null, d: 650 },
+          { m: N.F4, b: null, c: null, d: 650 },
+          { m: N.E4, b: N.C3, c: [N.G4, N.C5], d: 1300 },
+
+          // Frasa 2: Namamu akan selalu hidup dalam sanubariku...
+          { m: N.D4, b: N.G3, c: [N.B3, N.G4], d: 650 },
+          { m: N.E4, b: null, c: null, d: 650 },
+          { m: N.F4, b: null, c: null, d: 650 },
+          { m: N.G4, b: N.E3, c: [N.B3, N.G4], d: 1100 },
+          { m: N.A4, b: N.A3, c: [N.C4, N.E4], d: 650 },
+          { m: N.G4, b: null, c: null, d: 650 },
+          { m: N.F4, b: N.D3, c: [N.A3, N.D4], d: 650 },
+          { m: N.E4, b: N.G3, c: [N.B3, N.D4], d: 1350 },
+
+          // Frasa 3: Terima kasihku kuucapkan pada guruku yang tulus...
+          { m: N.E4, b: N.C3, c: [N.G4, N.C5], d: 600 },
+          { m: N.G4, b: null, c: null, d: 600 },
+          { m: N.C5, b: N.A3, c: [N.E4, N.A4], d: 1050 },
+          { m: N.B4, b: null, c: null, d: 600 },
+          { m: N.A4, b: N.F3, c: [N.C4, N.A4], d: 1050 },
+          { m: N.G4, b: null, c: null, d: 650 },
+          { m: N.A4, b: N.D3, c: [N.F4, N.A4], d: 650 },
+          { m: N.G4, b: N.G3, c: [N.D4, N.B4], d: 1300 },
+
+          // Frasa 4: Penutup lembut
+          { m: N.F4, b: N.F3, c: [N.A3, N.C4], d: 650 },
+          { m: N.E4, b: null, c: null, d: 650 },
+          { m: N.D4, b: N.G3, c: [N.B3, N.F4], d: 750 },
+          { m: N.C4, b: N.C3, c: [N.E4, N.G4, N.C5], d: 1800 }
+        ];
+      }
+
+      initContext() {
+        if (!this.ctx) {
+          const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+          this.ctx = new AudioContextClass();
+        }
+        if (this.ctx.state === 'suspended') {
+          this.ctx.resume();
+        }
+      }
+
+      playTone(freq, durationSec, volume, type = 'sine') {
+        if (!this.ctx || !freq) return;
+        const now = this.ctx.currentTime;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, now);
+
+        // Soft Piano-like Envelope (Attack, Decay, Gentle Release)
+        gain.gain.setValueAtTime(0.0001, now);
+        gain.gain.exponentialRampToValueAtTime(volume, now + 0.06);
+        gain.gain.exponentialRampToValueAtTime(volume * 0.45, now + durationSec * 0.5);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + durationSec + 0.65);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+
+        osc.start(now);
+        osc.stop(now + durationSec + 0.7);
+      }
+
+      scheduleNext() {
+        if (!this.isPlaying) return;
+        const step = this.sequence[this.stepIndex];
+        const durSec = step.d / 1000;
+
+        // Melodi utama (Piano hangat)
+        if (step.m) {
+          this.playTone(step.m, durSec * 1.15, 0.085, 'sine');
+          this.playTone(step.m * 2, durSec * 0.7, 0.015, 'triangle'); // Harmonik lembut
+        }
+        // Nada bass hangat
+        if (step.b) {
+          this.playTone(step.b, durSec * 1.6, 0.055, 'sine');
+        }
+        // Akor pengiring
+        if (step.c) {
+          step.c.forEach((chordFreq) => {
+            this.playTone(chordFreq, durSec * 1.4, 0.028, 'triangle');
+          });
+        }
+
+        this.stepIndex = (this.stepIndex + 1) % this.sequence.length;
+        this.timerId = setTimeout(() => this.scheduleNext(), step.d);
+      }
+
+      start() {
+        try {
+          this.initContext();
+          if (this.isPlaying) return;
+          this.isPlaying = true;
+          this.updateUI();
+          this.scheduleNext();
+        } catch (err) {
+          console.error('Audio initialization error:', err);
+        }
+      }
+
+      stop() {
+        this.isPlaying = false;
+        if (this.timerId) {
+          clearTimeout(this.timerId);
+          this.timerId = null;
+        }
+        this.updateUI();
+      }
+
+      toggle() {
+        if (this.isPlaying) {
+          this.stop();
+        } else {
+          this.start();
+        }
+      }
+
+      updateUI() {
+        const eq = document.getElementById('music-eq');
+        const text = document.getElementById('music-status-text');
+        const icon = document.getElementById('music-icon');
+
+        if (this.isPlaying) {
+          eq.classList.add('playing');
+          text.textContent = 'Musik On';
+          icon.classList.remove('fa-play');
+          icon.classList.add('fa-pause');
+        } else {
+          eq.classList.remove('playing');
+          text.textContent = 'Musik Off';
+          icon.classList.remove('fa-pause');
+          icon.classList.add('fa-play');
+        }
+      }
+    }
+
+    const bgMusic = new GentleTeacherMusic();
+
+    /**
+     * 4. WELCOME CURTAIN INTERACTION
+     */
+    document.getElementById('open-curtain-btn').addEventListener('click', () => {
+      const curtain = document.getElementById('welcome-curtain');
+      curtain.classList.add('opened');
+      bgMusic.start();
+      triggerPetalsBurst(32);
+
+      // Reveal first page items smoothly after curtain opens
+      setTimeout(() => {
+        triggerSectionReveal(document.getElementById('page-ucapan'));
+      }, 450);
+    });
+
+    document.getElementById('music-toggle-btn').addEventListener('click', () => {
+      bgMusic.toggle();
+    });
+
+    /**
+     * 5. INTERAKTIVITAS APRECIATION & DOA COUNTER
+     */
+    const appreciationQuotes = [
+      "Terima kasih Bapak & Ibu Guru SMAN 1 Kabangka atas setiap ilmu yang menerangi jalan kami.",
+      "Kesabaran dan ketulusan Bapak & Ibu Guru adalah hadiah terindah dalam perjalanan hidup kami.",
+      "Selamat Hari Guru Nasional 25 November 2026! Semoga sehat dan bahagia selalu.",
+      "Jasamu abadi dalam setiap langkah keberhasilan murid-murid SMA Negeri 1 Kabangka.",
+      "Terima kasih telah menjadi orang tua kedua yang membimbing dengan penuh kasih sayang."
+    ];
+
+    let toastTimeout = null;
+    function showAppreciationToast(customMsg) {
+      const toast = document.getElementById('appreciation-toast');
+      const msgEl = document.getElementById('toast-message');
+      msgEl.textContent = customMsg || appreciationQuotes[Math.floor(Math.random() * appreciationQuotes.length)];
+
+      toast.classList.remove('opacity-0', '-translate-y-4');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('opacity-0', '-translate-y-4');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 3600);
+    }
+
+    document.getElementById('send-appreciation-btn').addEventListener('click', () => {
+      triggerPetalsBurst(25);
+      showAppreciationToast();
+    });
+
+    let aamiinTotal = 126;
+    document.getElementById('aamiin-btn').addEventListener('click', () => {
+      aamiinTotal += 1;
+      document.getElementById('aamiin-count').textContent = aamiinTotal;
+      triggerPetalsBurst(22);
+      showAppreciationToast("Aamiin Ya Rabbal ‘Alamin. Doa tulus Anda telah dipanjatkan untuk Dewan Guru SMAN 1 Kabangka.");
+    });
+
+    /**
+     * 6. AMBIENT FLOATING PETALS & GOLDEN BOKEH CANVAS
+     */
+    const canvas = document.getElementById('ambient-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class Particle {
+      constructor(burst = false) {
+        this.reset(burst);
+      }
+
+      reset(burst = false) {
+        this.x = Math.random() * canvas.width;
+        this.y = burst ? canvas.height * (0.2 + Math.random() * 0.5) : -20 - Math.random() * canvas.height;
+        this.size = burst ? 5 + Math.random() * 6 : 3 + Math.random() * 4.5;
+        this.speedY = burst ? -1.5 + Math.random() * 3.5 : 0.45 + Math.random() * 0.85;
+        this.speedX = (Math.random() - 0.5) * (burst ? 3.5 : 0.9);
+        this.rotation = Math.random() * Math.PI * 2;
+        this.rotationSpeed = (Math.random() - 0.5) * 0.04;
+        this.isPetal = Math.random() > 0.45;
+        const colors = [
+          'rgba(245, 158, 11, 0.55)', // Amber Gold
+          'rgba(251, 191, 36, 0.50)', // Warm Gold
+          'rgba(244, 114, 182, 0.40)', // Soft Blossom Pink
+          'rgba(42, 123, 111, 0.35)'   // Sage Green
+        ];
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+        this.burst = burst;
+        this.life = burst ? 140 : Infinity;
+      }
+
+      update() {
+        this.x += this.speedX + Math.sin(this.y * 0.015) * 0.35;
+        this.y += this.speedY;
+        this.rotation += this.rotationSpeed;
+        if (this.burst) {
+          this.speedY += 0.03; // gentle gravity
+          this.life -= 1;
+        } else if (this.y > canvas.height + 20) {
+          this.reset(false);
+          this.y = -15;
+        }
+      }
+
+      draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.rotation);
+        ctx.fillStyle = this.color;
+
+        if (this.isPetal) {
+          // Organic Flower Petal Shape
+          ctx.beginPath();
+          ctx.moveTo(0, -this.size);
+          ctx.bezierCurveTo(this.size, -this.size, this.size, this.size, 0, this.size);
+          ctx.bezierCurveTo(-this.size, this.size, -this.size, -this.size, 0, -this.size);
+          ctx.fill();
+        } else {
+          // Soft Golden Bokeh Orb
+          ctx.beginPath();
+          ctx.arc(0, 0, this.size * 0.75, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        ctx.restore();
+      }
+    }
+
+    // Initialize gentle ambient particles
+    for (let i = 0; i < 24; i++) {
+      particles.push(new Particle(false));
+    }
+
+    function triggerPetalsBurst(count = 20) {
+      for (let i = 0; i < count; i++) {
+        particles.push(new Particle(true));
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles = particles.filter((p) => !p.burst || p.life > 0);
+      particles.forEach((p) => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animateParticles);
+    }
+
+    window.onload = function () {
+      animateParticles();
+    };
+  </script>
+</body>
+</html>
